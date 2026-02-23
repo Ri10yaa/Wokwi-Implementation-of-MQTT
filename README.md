@@ -21,28 +21,6 @@ Both LCDs share the same I2C bus but use different I2C addresses.
 
 ------------------------------------------------------------------------
 
-## I2C LCD Addresses
-
-  LCD     I2C Address   Purpose
-  ------- ------------- ------------------------------
-  LCD 1   0x27          Displays Published Messages
-  LCD 2   0x3F          Displays Subscribed Messages
-
-------------------------------------------------------------------------
-
-## ESP32 to LCD Connections
-
-  ESP32 Pin   LCD1   LCD2
-  ----------- ------ ------
-  3V3         VCC    VCC
-  GND         GND    GND
-  GPIO21      SDA    SDA
-  GPIO22      SCL    SCL
-
-Both LCDs share SDA and SCL lines but must have different I2C addresses.
-
-------------------------------------------------------------------------
-
 ## MQTT Configuration
 
     const char* mqttServer = "192.168.162.64";  // Change to your MQTT Broker IP
@@ -86,13 +64,6 @@ Example:
     mosquitto_pub -h 192.168.162.64 -p 1883 -t subC -m "Hello ESP32"
 
 The message will appear on the Subscriber LCD.
-
-------------------------------------------------------------------------
-
-## Project Files
-
--   esp32_mqtt_dual_lcd.ino → Main ESP32 Code
--   diagram.json → Wokwi Circuit Configuration
 
 ------------------------------------------------------------------------
 
